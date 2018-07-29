@@ -2,18 +2,28 @@
   "name": "redux-experiment0",
   "version": "1.0.0",
   "description": "Playing with redux from redux-book-started",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --hot --progress"
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "test": "echo \"No test specified\" && exit 0"
   },
   "author": "Alexandre Serra",
   "license": "MIT",
-  "dependencies": {
-    "jquery": "3.2.1",
-    "redux": "3.7.2"
-  },
   "devDependencies": {
-    "webpack": "3.10.0",
-    "webpack-dev-server": "2.9.7"
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "react-hot-loader": "^4.3.4",
+    "webpack": "^4.16.3",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
+  },
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0"
   }
 }
