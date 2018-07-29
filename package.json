@@ -1,0 +1,19 @@
+{
+  "name": "redux-experiment0",
+  "version": "1.0.0",
+  "description": "Playing with redux from redux-book-started",
+  "main": "app.js",
+  "scripts": {
+    "start": "webpack-dev-server --hot --progress"
+  },
+  "author": "Alexandre Serra",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "3.2.1",
+    "redux": "3.7.2"
+  },
+  "devDependencies": {
+    "webpack": "3.10.0",
+    "webpack-dev-server": "2.9.7"
+  }
+}
