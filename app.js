@@ -1,16 +1,6 @@
-import { createStore } from 'redux';
+import store from './store';
+import { addRecipe } from './actions/recipes';
+import { addIngredient } from './actions/ingredients';
 
-const reducer = (state, action) =>
-	action.type === 'INC'
-		? state + 1
-		: state;
-
-const initialState = 0;
-
-const store = createStore(reducer, initialState);
-
-store.subscribe(() => document.getElementById('counter').innerText = store.getState());
-
-setInterval(() => store.dispatch({ type: 'INC' }), 500);
-
-console.log("Redux started");
+store.dispatch(addRecipe('Pancakes'));
+store.dispatch(addIngredient('Pancakes', 'Egg', 3));
