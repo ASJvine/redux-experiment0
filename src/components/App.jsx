@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import * as IngredientsActions from '../actions/ingredients';
 import * as RecipesActions from '../actions/recipes';
 
-import Recipes from './Recipes';
+import Recipes from '../containers/Recipes';
 
 class App extends Component {
   render() {

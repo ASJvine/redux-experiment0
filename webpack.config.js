@@ -1,15 +1,21 @@
 const webpack = require('webpack');
-const path = require('path');
 
 module.exports = {
-  devTool: 'cheap-eval-source-map',
-  entry: './src/index.js',
+  devtool: 'cheap-eval-source-map',
+  entry: './src/index.jsx',
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            "env",
+            "react",
+            "stage-2"
+          ]
+        }
       }
     ]
   },
@@ -21,11 +27,7 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js'
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
   devServer: {
-    contentBase: './dist',
-    hot: true
+    contentBase: './dist'
   }
 };
