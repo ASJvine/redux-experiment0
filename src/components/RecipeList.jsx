@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Recipe from './Recipe';
+import RecipeForm from './RecipeForm';
 
-const RecipeList = ({ recipes }) => (
+const RecipeList = ({ recipes, addRecipe }) => (
   <div className="recipes">
     <h2>Recipes:</h2>
     <ul>
@@ -11,6 +12,7 @@ const RecipeList = ({ recipes }) => (
         <Recipe key={index} {...recipe}/>
       ))}
     </ul>
+    <RecipeForm addRecipe={addRecipe} />
   </div>
 );
 
@@ -19,7 +21,8 @@ RecipeList.propTypes = {
     PropTypes.shape({
       name: PropTypes.string.isRequired,
     })
-  ).isRequired
+  ).isRequired,
+  addRecipe: PropTypes.func.isRequired,
 };
 
 export default RecipeList;
