@@ -1,6 +1,6 @@
-import { ADD_INGREDIENT } from '../constants/actionTypes';
+import { ADD_INGREDIENT, SET_INGREDIENTS } from '../constants/actionTypes';
 
-const initialState = [{ recipe: 'Omelette', name: 'Egg', quantity: 2 }];
+const initialState = [{ recipe: 'Omelette', name: 'Egg', quantity: 2, measure: 'small' }];
 
 const ingredientsReducer = (ingredients = initialState, action) => {
   switch (action.type) {
@@ -11,8 +11,10 @@ const ingredientsReducer = (ingredients = initialState, action) => {
             quantity: action.quantity
       };
       return ingredients.concat(newIngredient)
-      default:
-        return ingredients
+    case SET_INGREDIENTS:
+      return action.ingredients;
+    default:
+      return ingredients
   }
 };
 

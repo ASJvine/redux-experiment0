@@ -2,6 +2,7 @@ import axios from 'axios';
 
 import { FETCH_RECIPES } from '../constants/actionTypes';
 import { setRecipes } from '../actions/recipes';
+import { setIngredients } from '../actions/ingredients';
 
 const RECIPES_URL = 'https://s3.amazonaws.com/500tech-shared/db.json';
 
@@ -13,7 +14,11 @@ function fetchData(url, callback) {
 
 const apiMiddleware = ({ dispatch }) => next => action => {
   if (action.type === FETCH_RECIPES) {
-    fetchData(RECIPES_URL, ({ data }) => dispatch(setRecipes(data.recipes)));
+    fetchData(RECIPES_URL, ({ data }) => {
+      dispatch(setRecipes(data.recipes));
+      dispatch(setIngredients(data.ingredients));
+    });
+
   }
   next(action);
 };

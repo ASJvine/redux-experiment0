@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Recipe from './Recipe';
+import Ingredient from './Ingredient';
 import RecipeForm from './RecipeForm';
 
 class  RecipeList extends React.Component {
@@ -10,7 +11,8 @@ class  RecipeList extends React.Component {
     props.fetchRecipes();
   }
   render() {
-    const { recipes, addRecipe } = this.props;
+    const { recipes, addRecipe, ingredients } = this.props;
+
     return (
       <div className="recipes">
         <h2>Recipes:</h2>
@@ -20,6 +22,12 @@ class  RecipeList extends React.Component {
           ))}
         </ul>
         <RecipeForm addRecipe={addRecipe} />
+        <h2>Ingredients:</h2>
+        <ul>
+          {ingredients.map((ingredient, index) => (
+            <Ingredient key={index} {...ingredient} />
+          ))}
+        </ul>
       </div>
     );
   }

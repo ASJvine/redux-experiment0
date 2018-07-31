@@ -7,6 +7,7 @@ import RecipeList from '../components/RecipeList';
 
 const mapStateToProps = state => ({
   recipes: state.recipes,
+  ingredients: state.ingredients,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
