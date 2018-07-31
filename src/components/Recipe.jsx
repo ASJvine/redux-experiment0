@@ -7,7 +7,7 @@ const Recipe = ({ name, onClick }) => (
 
 Recipe.propTypes = {
   name: PropTypes.string.isRequired,
-  name: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default Recipe;
