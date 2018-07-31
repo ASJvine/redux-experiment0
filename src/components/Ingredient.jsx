@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Ingredient = ({ name, quantity, measure }) => (
+const Ingredient = ({ name, quantity, measure, recipe }) => (
   <li>{`${quantity} ${measure} ${name}`}</li>
 );
 
