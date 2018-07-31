@@ -1,6 +1,6 @@
 import { ADD_RECIPE, SET_RECIPES } from '../constants/actionTypes';
 
-const initialState = [{ name: 'Omelette' }];
+const initialState = [];
 
 const recipesReducer = (recipes = initialState, action) => {
   switch (action.type) {
