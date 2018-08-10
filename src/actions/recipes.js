@@ -5,7 +5,11 @@ import {
 } from '../constants/actionTypes';
 
 export const addRecipe = (name) => ({
-  type: ADD_RECIPE, name
+  type: ADD_RECIPE, 
+  name,
+  meta: {
+    debounce: 500,
+  }
 });
 
 export const fetchRecipes = () => ({
