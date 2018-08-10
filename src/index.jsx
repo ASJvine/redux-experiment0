@@ -5,6 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 
 import rootReducer from './reducers/index';
 import loggerMiddleware from './middlewares/logger';
+import debounceMiddleware from './middlewares/debounce';
 import apiMiddleware from './middlewares/api';
 import App from './components/App.jsx';
 
@@ -12,7 +13,7 @@ import './styles/main.scss';
 
 const configureStore = createStore(
   rootReducer,
-  applyMiddleware(loggerMiddleware, apiMiddleware)
+  applyMiddleware(debounceMiddleware, loggerMiddleware, apiMiddleware)
 );
 
 render(
